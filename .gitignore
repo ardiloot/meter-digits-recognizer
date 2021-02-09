@@ -1,0 +1,4 @@
+.vscode/
+.history/
+*.egg-info/
+*.code-workspace
