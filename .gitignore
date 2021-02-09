@@ -2,3 +2,5 @@
 .history/
 *.egg-info/
 *.code-workspace
+__pycache__/
+*.py[cod]
