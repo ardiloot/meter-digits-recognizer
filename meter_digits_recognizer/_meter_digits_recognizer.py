@@ -1,6 +1,7 @@
 __all__ = ["MeterDigitsRecognizer"]
 
 import os
+import cv2
 import torch
 import numpy as np
 from meter_digits_recognizer._net import Net
@@ -15,7 +16,7 @@ class MeterDigitsRecognizer:
         self.net.load_state_dict(torch.load(os.path.join(PACKAGE_DIR, "model_weights.pt"), map_location="cpu"))
 
     def run(self, digit_imgs):
-        digits_batch = torch.cat([self.net.test_transform(img).unsqueeze(0) for img in digit_imgs], 0)
+        digits_batch = torch.cat([self.net.test_transform(cv2.resize(img, self.net.input_size, interpolation=cv2.INTER_LINEAR)).unsqueeze(0) for img in digit_imgs], 0)
         with torch.no_grad():
             outputs = self.net.forward(digits_batch)
         all_confidences = torch.nn.functional.softmax(outputs, 1).numpy()
