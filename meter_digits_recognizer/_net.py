@@ -14,7 +14,7 @@ class Net(nn.Module):
     train_transform = transforms.Compose([
         transforms.ToTensor(),
         transforms.ColorJitter(brightness=0.1),
-        transforms.RandomAffine(5.0,  translate=(0.05, 0.05), scale=(1.0, 1.2), resample=PIL.Image.BILINEAR), 
+        transforms.RandomAffine(5.0,  translate=(0.1, 0.1), scale=(1.0, 1.2), resample=PIL.Image.BILINEAR), 
     ])
 
     def __init__(self):
