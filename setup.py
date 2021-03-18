@@ -7,5 +7,9 @@ setup(name="meter-digits-recognizer",
     author_email="ardi.loot@outlook.com",
     packages=["meter_digits_recognizer"],
     zip_safe=False,
-    include_package_data=True
+    include_package_data=True,
+    install_requires=[
+        "Pillow",
+        "opencv-python",
+    ]
 )
