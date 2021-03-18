@@ -26,6 +26,7 @@ def test_meter_digits_recognition():
 
     dr = MeterDigitsRecognizer()
     predictions, confidences = dr.run(images)
-
+    print("predictions", predictions)
+    print("confidences", confidences)
     assert len(predictions) == len(images)
     assert all([predicted == truth for predicted, truth in zip(predictions, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])])

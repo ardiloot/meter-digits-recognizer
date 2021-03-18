@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name="meter-digits-recognizer",
+setup(name="meter-digits-recognizer", 
     version="0.1.1",
     url="https://github.com/ardiloot/meter-digits-recognizer",
     author="Ardi Loot",
