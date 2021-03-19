@@ -1,13 +1,19 @@
 # About
 
+This libary is developed for recognizing utility meter digits by using neural network classifier (see the image). The neural network is implemented in Pytorch and the details are available in the [code](meter_digits_recognizer/_net.py). 
+
+The datset (from [here](https://github.com/jomjol/neural-network-digital-counter-readout) + self-made images) has 959 images that are classified into eleven categories: digits "0"-"9" and "10" for cases where digit is not recognizable.
+
 ![](example_output.png)
 
 # Installation
 
 1. Install PyTorch by following the official guidelines https://pytorch.org/get-started/locally/
-2. Install from pip `pip install meter-digits-recognizer`
+2. Install from PyPI `pip install meter-digits-recognizer`
 
-# Minimal Exmple
+# Usage
+
+Minimal example:
 
 ```python
 import cv2
@@ -31,3 +37,11 @@ Prediction 0 (confidence 100.0 %)
 ```
 
 For additional examples see [example.ipynb](example.ipynb)
+
+# Traing
+
+To retrain the neural network follow the steps in the [train_neural_net.ipynb](train_neural_net.ipynb) notebook.
+
+# Credits
+
+* https://github.com/jomjol/neural-network-digital-counter-readout (dataset & inspiration) 
