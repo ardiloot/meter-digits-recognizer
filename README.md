@@ -8,8 +8,11 @@ The datset (from [here](https://github.com/jomjol/neural-network-digital-counter
 
 # Installation
 
-1. Install PyTorch by following the official guidelines https://pytorch.org/get-started/locally/
-2. Install from PyPI `pip install meter-digits-recognizer`
+Install from PyPI:
+
+```
+pip install meter-digits-recognizer
+```
 
 # Usage
 
