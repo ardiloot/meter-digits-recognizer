@@ -139,8 +139,6 @@ python-dateutil==2.8.2
     # via
     #   jupyter-client
     #   matplotlib
-pywin32==305
-    # via jupyter-core
 pyzmq==25.0.0
     # via
     #   ipykernel
