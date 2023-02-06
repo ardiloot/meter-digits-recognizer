@@ -10,7 +10,7 @@ charset-normalizer==3.0.1
     # via requests
 idna==3.4
     # via requests
-numpy==1.24.1
+numpy==1.24.2
     # via
     #   meter-digits-recognizer (setup.py)
     #   opencv-python
