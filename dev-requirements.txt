@@ -93,7 +93,7 @@ numpy==1.24.2
     #   meter-digits-recognizer (setup.py)
     #   opencv-python
     #   torchvision
-opencv-python==4.7.0.68
+opencv-python==4.7.0.72
     # via meter-digits-recognizer (setup.py)
 packaging==23.0
     # via
