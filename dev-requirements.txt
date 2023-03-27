@@ -46,7 +46,7 @@ idna==3.4
     # via requests
 iniconfig==2.0.0
     # via pytest
-ipykernel==6.21.2
+ipykernel==6.22.0
     # via
     #   ipywidgets
     #   meter-digits-recognizer (setup.py)
