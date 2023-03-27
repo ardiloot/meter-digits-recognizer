@@ -113,7 +113,7 @@ pillow==9.4.0
     #   torchvision
 pip-tools==6.12.2
     # via meter-digits-recognizer (setup.py)
-platformdirs==3.0.0
+platformdirs==3.2.0
     # via jupyter-core
 pluggy==1.0.0
     # via pytest
