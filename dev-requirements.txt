@@ -52,7 +52,7 @@ ipykernel==6.21.2
     #   meter-digits-recognizer (setup.py)
 ipympl==0.9.3
     # via meter-digits-recognizer (setup.py)
-ipython==8.10.0
+ipython==8.12.0
     # via
     #   ipykernel
     #   ipympl
