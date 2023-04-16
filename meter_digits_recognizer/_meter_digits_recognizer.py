@@ -21,8 +21,8 @@ class MeterDigitsRecognizer:
             for img in digit_imgs
         ])
         self.net.setInput(digits_batch)
-        outputs = self.net.forward() 
-        all_confidences = softmax(outputs, axis=0)
+        outputs = self.net.forward()
+        all_confidences = softmax(outputs, axis=1)
         predictions = np.argmax(all_confidences, axis=1)
         confidences = all_confidences[np.arange(len(predictions)), predictions]
         return predictions, confidences
