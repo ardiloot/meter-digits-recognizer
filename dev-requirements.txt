@@ -102,7 +102,7 @@ numpy==1.24.2
     #   torchvision
 onnx==1.13.1
     # via meter-digits-recognizer (setup.py)
-opencv-python==4.7.0.72
+opencv-python==4.6.0.66
     # via meter-digits-recognizer (setup.py)
 packaging==23.1
     # via
