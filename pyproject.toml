@@ -16,9 +16,6 @@ classifiers = [
 dependencies = [
     "numpy",
     "opencv-python",
-    "Pillow",
-    "torch",
-    "torchvision",
 ]
 dynamic = ["version"]
 
@@ -33,6 +30,11 @@ dev = [
     "pip-tools",
     "ipykernel",
     "ipympl",
+    "Pillow",
+    "torch",
+    "torchvision",
+    "torchsummary",
+    "onnx",
 ]
 
 [tool.setuptools]

@@ -2,9 +2,7 @@ __all__ = ["MeterDigitsRecognizer"]
 
 import os
 import cv2
-import torch
 import numpy as np
-from meter_digits_recognizer._net import Net
 
 PACKAGE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -12,19 +10,29 @@ PACKAGE_DIR = os.path.dirname(os.path.abspath(__file__))
 class MeterDigitsRecognizer:
 
     def __init__(self):
-        self.net = Net()
-        state_dict = torch.load(os.path.join(PACKAGE_DIR, "model_weights.pt"), map_location="cpu")
-        self.net.load_state_dict(state_dict)
+        self.net = cv2.dnn.readNetFromONNX(os.path.join(PACKAGE_DIR, "model.onnx"))
+        self.net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
+        self.net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
     def run(self, digit_imgs):
-        digits_batch = torch.cat([self.net.test_transform(cv2.resize(img,
-            self.net.input_size, interpolation=cv2.INTER_LINEAR)).unsqueeze(0) for img in digit_imgs], 0)
-        with torch.no_grad():
-            outputs = self.net.forward(digits_batch) 
-        all_confidences = torch.nn.functional.softmax(outputs, 1).numpy()
+
+        digits_batch = np.stack([
+            np.transpose(cv2.resize(img, (20, 32), interpolation=cv2.INTER_LINEAR).astype(np.float32), (2, 0, 1))
+            for img in digit_imgs
+        ])
+        self.net.setInput(digits_batch)
+        outputs = self.net.forward() 
+        all_confidences = softmax(outputs, axis=0)
         predictions = np.argmax(all_confidences, axis=1)
         confidences = all_confidences[np.arange(len(predictions)), predictions]
         return predictions, confidences
+
+
+def softmax(x, axis=None):
+    x_max = np.amax(x, axis=axis, keepdims=True)
+    exp_x_shifted = np.exp(x - x_max)
+    return exp_x_shifted / np.sum(exp_x_shifted, axis=axis, keepdims=True)
+
 
 if __name__ == "__main__":
     pass
