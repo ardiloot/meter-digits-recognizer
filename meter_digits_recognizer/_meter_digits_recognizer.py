@@ -19,7 +19,7 @@ class MeterDigitsRecognizer:
         digits_batch = np.stack([
             np.transpose(cv2.resize(img, (20, 32), interpolation=cv2.INTER_LINEAR).astype(np.float32), (2, 0, 1))
             for img in digit_imgs
-        ])
+        ]) / 255.0
         self.net.setInput(digits_batch)
         outputs = self.net.forward()
         all_confidences = softmax(outputs, axis=1)
