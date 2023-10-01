@@ -138,7 +138,7 @@ pycodestyle==2.10.0
     # via flake8
 pyflakes==3.0.1
     # via flake8
-pygments==2.15.1
+pygments==2.16.1
     # via ipython
 pyparsing==3.0.9
     # via matplotlib
