@@ -38,7 +38,7 @@ filelock==3.11.0
     # via torch
 flake8==6.0.0
     # via meter-digits-recognizer (setup.py)
-fonttools==4.39.3
+fonttools==4.43.0
     # via matplotlib
 idna==3.4
     # via requests
