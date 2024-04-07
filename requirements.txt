@@ -4,9 +4,9 @@
 #
 #    pip-compile --output-file=requirements.txt
 #
-numpy==1.24.2
+numpy==1.26.4
     # via
     #   meter-digits-recognizer (setup.py)
     #   opencv-python
-opencv-python==4.6.0.66
+opencv-python==4.9.0.80
     # via meter-digits-recognizer (setup.py)
