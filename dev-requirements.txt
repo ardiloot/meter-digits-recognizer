@@ -195,7 +195,7 @@ torchsummary==1.5.1
     # via meter-digits-recognizer (setup.py)
 torchvision==0.17.2
     # via meter-digits-recognizer (setup.py)
-tornado==6.4
+tornado==6.4.1
     # via
     #   ipykernel
     #   jupyter-client
